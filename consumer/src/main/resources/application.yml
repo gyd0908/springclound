@@ -1,0 +1,10 @@
+server:
+  port: 82
+
+spring:
+  application:
+    name: consumer # 消费者注册进nacos自己叫什么名字
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
