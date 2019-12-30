@@ -11,13 +11,13 @@ import javax.annotation.Resource;
 @RestController
 public class ConsumerController {
     public static final String PaymentSrv_URL = "http://cloud";
-
     @Resource
     private RestTemplate restTemplate;
 
     @GetMapping("/consumer/payment/create") //客户端用浏览器是get请求，但是底层实质发送post调用服务端8001
     public CommonResult create(Payment payment)
     {
+        System.out.println(1);
         return restTemplate.postForObject(PaymentSrv_URL + "/payment/create",payment,CommonResult.class);
     }
 
